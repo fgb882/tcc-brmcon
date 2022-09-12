@@ -1,22 +1,48 @@
-import image from '../assets/logo.jpg'
-
 function Navbar() {
+
+
+    const hamburguer = document.querySelector(".hamburguer");
+    const navbaritens = document.querySelector(".navbaritens");
+
+    document.querySelectorAll("navbaritens").forEach(n => n.addEventListener("click", () => {
+        hamburguer.classList.remove("active");
+        navbaritens.classList.remove("active");
+
+    }
+    ))
     return (
         <nav id="navbar">
             <div className="navbar">
-                <div className="navbar-logo">
-                    <a href="hero">BRM Consultoria</a>
+                <div className="navbarlogo">
+                    <a href="#hero">BRM Consultoria</a>
                 </div>
-                <div className="navbar-itens">
-                <ul>
-                    <li><a href="#">Clientes</a></li>
-                    <li><a href="#">Contatos</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                </ul>
+                <div className="navbaritens">
+                        <a href="#">Clientes</a>
+                        <a href="#">Contatos</a>
+                        <a href="#">Portfolio</a>
+                </div>
+                <div className="hamburguer" onClick={hamburguerClick}>
+                        <span className="bar"></span>
+                        <span className="bar"></span>
+                        <span className="bar"></span>
                 </div>
             </div>
         </nav>
     )
+}
+
+
+function hamburguerClick() {
+
+    const hamburguer = document.querySelector(".hamburguer");
+    const navbaritens = document.querySelector(".navbaritens");
+
+    hamburguer.addEventListener("click", () => {
+        hamburguer.classList.toggle("active");
+        navbaritens.classList.toggle("active");
+
+    })
+
 }
 
 
