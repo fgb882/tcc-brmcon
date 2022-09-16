@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 function Navbar() {
 
 
@@ -19,7 +20,7 @@ function Navbar() {
                 <div className="navbaritens">
                         <a href="#">Clientes</a>
                         <a href="#">Contatos</a>
-                        <a href="#">Portfolio</a>
+                        <Link to="/portfolio">Portfolio</Link>
                 </div>
                 <div className="hamburguer" onClick={hamburguerClick}>
                         <span className="bar"></span>

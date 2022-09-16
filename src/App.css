@@ -83,6 +83,20 @@ li {
   color: #BD4429;
 }
 
+ #navbar a {
+  transition: all 0.3s ease 0s;
+  font-size: 2rem;
+  color: white;
+  text-decoration: underline 0.15em #BD4429;
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 300ms, text-underline-offset 300ms;
+  transition: ease 300ms;
+}
+
+#navbar a:hover {
+  color: #BD4429;
+}
+
 .hamburguer {
   display: none;
   cursor: pointer;
@@ -166,8 +180,13 @@ li {
   display: flex;
   flex-direction: column;
   margin: 50px;
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0);
+  transition: 0.3s;
 }
 
+.clientesItem:hover {
+  box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.4);
+}
 
 .clientesItem .clienteBarra {
   width: 100%;
@@ -202,7 +221,7 @@ li {
   padding: 0;
   text-align: center;
   padding-top: 30px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   color: white;
 }
 
@@ -217,23 +236,22 @@ li {
   font-size: 2rem;
 }
 
-#footer .socialIcon {
+#footer .redesocial {
   display: flex;
-  margin-bottom: 10px;
+  flex-direction: row;
+  justify-content: center;
 }
 
-#footer .socialItem {
-  height: 50px;
-  width: 50px;
-  margin: 0 5px;
+#footer .social-item img {
+  height: 70px;
+  width: 70px;
 }
-
-#footer .socialItem img {
+.social-item img {
   filter: grayscale(1);
   transition: .3s ease filter;
 }
 
-#footer .socialItem img:hover {
+.social-item img:hover {
   filter: grayscale(0);
 
 }
@@ -249,6 +267,165 @@ li {
 #footer a:hover {
   color: #BD4429;
   transition: ease-in-out 0.3s;
+}
+/*barra */
+.barra {
+  width: 100%;
+  background-color: #01876F;
+  height: 1vh;
+}
+/*portfolio */
+
+#portfolio {
+  width: 33%;
+}
+
+#portfolio .portfoliomain {
+  width: 100%;
+  height: 400px;
+  border: #01876F 2px solid;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#portfolio .portfoliomain {
+  text-align: center;
+}
+
+
+#portfolio .portfoliomain p {
+  font-size: 2rem;
+  font-family: 'Raleway';
+  padding-bottom: 0px;
+}
+
+#portfolio .portfoliomain h4 {
+  font-size: 2rem;
+  font-family: 'Raleway Light';
+}
+#portfolio .redesocial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#portfolio .social-item img {
+  width: 60px;
+  height: 60px;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #01876F;
+}
+
+.portfolioinfo {
+  width: 100%;
+  background-color: #01876F;
+  color: #fff;
+  padding-bottom: 10px;
+}
+
+#photos {
+  width: 33%;
+}
+
+.photo {
+  border: #01876F 2px solid;
+  height: 400px;
+}
+
+
+.photo {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url('./assets/bg-cursedcar-1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.phototitle h3 {
+  font-size: 2rem;
+  padding-left: 10px;
+  max-height: 15%;
+}
+
+.photoimage {
+  max-height: 85%;
+  max-width: 85%;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.photoimage img {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width:650px){
+  #portfolio .portfoliomain a {
+    font-size: 2rem;
+  }
+
+  #portfolio .portfoliomain p {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+
+  #portfolio .portfoliomain a {
+    font-size: 3rem;
+  }
+  #portfolio .portfoliomain p {
+    font-size: 3rem;
+    width: 100%;
+
+  }
+
+  #portfolio .portfoliomain {
+    width: 99vw;
+  }
+
+  .portfolio {
+    flex-direction: column;
+  }
+
+  .photo {
+    width: 99vw;
+    margin-left: 0px;
+    background-color: darkgray;
+  }
+
+  .photo {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .phototitle h3 {
+    font-size: 2rem;
+    padding-left: 10px;
+  }
+
+  .photodescription p {
+    font-size: 1.5rem;
+    padding-left: 10px;
+  }
+
+
 }
 
 
@@ -339,3 +516,13 @@ li {
   }
 
 }
+
+/*portfolio set*/
+ .portfolioinfo a {
+  font-size: 3rem;
+  font-family: 'Raleway';
+  padding-bottom: 10px;
+  text-decoration: underline 0.1em #BD4429;
+  transition: 0.3s ease;
+
+ }
