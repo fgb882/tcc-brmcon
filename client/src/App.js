@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/home'
 import Portfolio from './pages/portfolio'
+import Admin from './pages/admin';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   );
