@@ -374,6 +374,63 @@ li {
   height: 100%;
 }
 
+/*admin panel*/
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.panel h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.client-panel {
+  width: 60%;
+  height: 50vh;
+  margin: 0 auto;
+  box-shadow: #01876F 4px 4px 4px 4px;
+  padding: 20px;
+  padding-top: 10px;
+}
+
+.client-panel h3 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.client-panel-register h4 {
+  font-size: 2rem;
+}
+
+.client-panel-register label {
+  font-size: 1.2rem;
+  padding: 5px;
+}
+
+.client-panel-register button {
+  padding: 6px;
+  font-size: 2rem;
+  margin-top: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #BD4429;
+  color: #fff;
+}
+
+
+.client-panel-register {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border: #BD4429 2px solid;
+  background-color: #01876F;
+  padding: 20px;
+}
+
 @media only screen and (max-width:650px){
   #portfolio .portfoliomain a {
     font-size: 2rem;

@@ -15,6 +15,8 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
+
+        {/*protected page*/}
         <Route path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
