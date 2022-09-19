@@ -1,12 +1,16 @@
 import React from 'react'
-import Adminpanel from '../components/adminpanel'
-import Navbar from '../components/navbar'
+import ClientPanel from '../components/clientpanel'
+import Footer from '../components/footer'
+import NavbarAdmin from '../components/navbar-admin'
+import Photopanel from '../components/photopanel'
 
 const Admin = () => {
   return (
-    <div>
-    <Navbar />
-    <Adminpanel />
+    <div className="admin">
+      <NavbarAdmin />
+      <ClientPanel />
+      <Photopanel />
+      <Footer />
     </div>
   )
 }

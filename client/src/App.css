@@ -1,6 +1,7 @@
 * {
   font-size: 9px;
   font-family: 'Raleway Light', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -35,26 +36,26 @@ li {
 
 #navbar .navbar {
   background-color: #01876F;
-  display:flex;
-  flex-direction: row;  
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10%;
-  
+  padding: 10px 10%;  
 }
 
-#navbar .navbarlogo a{
+#navbar .navbarlogo a {
   text-decoration: none;
   color: white;
   font-size: 2rem;
-  text-decoration: underline 0.15em #BD4429;
+  text-decoration: underline 0.15em #fff;
   text-underline-offset: 0.2em;
   transition: text-decoration-color 300ms, text-underline-offset 300ms;
   transition: ease 300ms;
 }
 
-#navbar .navbarlogo a:hover{
-    color:#BD4429;
+#navbar .navbarlogo a:hover {
+  color: #ddd;
+  text-decoration-color: #ddd;
 }
 
 
@@ -72,29 +73,31 @@ li {
 #navbar .navbaritens a {
   transition: all 0.3s ease 0s;
   font-size: 2rem;
-  color: white;
-  text-decoration: underline 0.15em #BD4429;
+  color: #fff;
+  text-decoration: underline 0.15em #fff;
   text-underline-offset: 0.2em;
   transition: text-decoration-color 300ms, text-underline-offset 300ms;
   transition: ease 300ms;
 }
 
 #navbar .navbaritens a:hover {
-  color: #BD4429;
+  color: #aaa;
+  text-decoration-color: #aaa;
 }
 
- #navbar a {
+#navbar a {
   transition: all 0.3s ease 0s;
   font-size: 2rem;
-  color: white;
-  text-decoration: underline 0.15em #BD4429;
+  color: #fff;
+  text-decoration: underline 0.15em #fff;
   text-underline-offset: 0.2em;
   transition: text-decoration-color 300ms, text-underline-offset 300ms;
   transition: ease 300ms;
 }
 
 #navbar a:hover {
-  color: #BD4429;
+  color: #aaa;
+  text-decoration-color: #aaa;
 }
 
 .hamburguer {
@@ -109,7 +112,7 @@ li {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: #BD4429;
+  background-color: #ddd;
 }
 
 /* Hero */
@@ -151,7 +154,7 @@ li {
 
 /* Clientes */
 
-#clientes .clientes{
+#clientes .clientes {
   flex-direction: column;
 }
 
@@ -200,12 +203,12 @@ li {
 }
 
 .clientesItem .clienteLogo img {
- width: 100px;
- height: 100px;
- margin-left: 70px;
- margin-top: 50px;
- border-radius:50% 50% 50% 50%;  
- border: #BD4429 solid;
+  width: 100px;
+  height: 100px;
+  margin-left: 70px;
+  margin-top: 50px;
+  border-radius: 50% 50% 50% 50%;
+  border: #BD4429 solid;
 }
 
 /*footer */
@@ -223,6 +226,7 @@ li {
   padding-top: 30px;
   padding-bottom: 30px;
   color: white;
+  border-top: #fff 4px solid;
 }
 
 #footer .footerItens p {
@@ -246,6 +250,7 @@ li {
   height: 70px;
   width: 70px;
 }
+
 .social-item img {
   filter: grayscale(1);
   transition: .3s ease filter;
@@ -268,12 +273,14 @@ li {
   color: #BD4429;
   transition: ease-in-out 0.3s;
 }
+
 /*barra */
 .barra {
   width: 100%;
   background-color: #01876F;
   height: 1vh;
 }
+
 /*portfolio */
 
 #portfolio {
@@ -283,7 +290,7 @@ li {
 #portfolio .portfoliomain {
   width: 100%;
   height: 400px;
-  border: #01876F 2px solid;
+  border: #fff 2px solid;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -305,6 +312,8 @@ li {
   font-size: 2rem;
   font-family: 'Raleway Light';
 }
+
+
 #portfolio .redesocial {
   display: flex;
   flex-direction: column;
@@ -328,6 +337,8 @@ li {
   flex-wrap: wrap;
   justify-content: center;
   background-color: #01876F;
+  height: 100%;
+  min-height: fit-content;
 }
 
 .portfolioinfo {
@@ -335,6 +346,7 @@ li {
   background-color: #01876F;
   color: #fff;
   padding-bottom: 10px;
+  padding-top: 20px;
 }
 
 #photos {
@@ -342,13 +354,12 @@ li {
 }
 
 .photo {
-  border: #01876F 2px solid;
+  border: #fff 2px solid;
   height: 400px;
 }
 
-
 .photo {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-image: url('./assets/bg-cursedcar-1.jpg');
@@ -360,7 +371,25 @@ li {
   font-size: 2rem;
   padding-left: 10px;
   max-height: 15%;
+  color: black;
+  transition: 0.3s ease;
 }
+
+.phototitle h3:hover {
+  color: #eee;
+}
+
+.phototitle p {
+  font-size: 1.2rem;
+  color: black;
+  padding-left: 10px;
+  transition: 0.3s ease;
+}
+
+.phototitle p:hover {
+  color: #eee;
+}
+
 
 .photoimage {
   max-height: 85%;
@@ -374,6 +403,16 @@ li {
   height: 100%;
 }
 
+/*portfolio set*/
+.portfolioinfo a {
+  font-size: 3rem;
+  font-family: 'Raleway';
+  padding-bottom: 10px;
+  text-decoration: underline 0.1em #aaa;
+  transition: 0.3s ease;
+
+}
+
 /*admin panel*/
 
 .panel {
@@ -381,6 +420,8 @@ li {
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  height: 93.5vh;
+  background-color: #01876F;
 }
 
 .panel h1 {
@@ -388,56 +429,198 @@ li {
   text-align: center;
 }
 
-.client-panel {
-  width: 60%;
-  height: 50vh;
+.login-panel {
+  min-width: 400px;
+  width: 400px;
   margin: 0 auto;
-  box-shadow: #01876F 4px 4px 4px 4px;
-  padding: 20px;
-  padding-top: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
-.client-panel h3 {
+.login-title {
+  background-color: #087460;
+  padding-bottom: 10px;
+  padding: 15px;
+  color: #eeeeee;
+}
+
+.login-title h3 {
   text-align: center;
   font-size: 2rem;
+  padding-bottom: 10px;
+  border-bottom: #eeeeee 2px solid;
 }
 
-.client-panel-register h4 {
+.login-form-title h3 {
+  text-align: center;
   font-size: 2rem;
+  color: #333333;
+  margin-bottom: 15px;
 }
 
-.client-panel-register label {
-  font-size: 1.2rem;
-  padding: 5px;
+.login-form {
+  padding: 30px;
+  background-color: #eeeeee;
+
 }
 
-.client-panel-register button {
-  padding: 6px;
-  font-size: 2rem;
-  margin-top: 10px;
-  text-decoration: none;
-  cursor: pointer;
-  background-color: #BD4429;
-  color: #fff;
+.login-form-input {
+  width: 100%;
+  max-width: 305px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #dddddd;
+  outline: none;
+  background-color: #ffffff;
+  transition: border-color 0.5s;
+
 }
 
-
-.client-panel-register {
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  border: #BD4429 2px solid;
+.login-form-button {
+  padding: 10px;
+  color: #ffffff;
+  font-weight: bold;
   background-color: #01876F;
-  padding: 20px;
+  width: 97.2%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-@media only screen and (max-width:650px){
+
+.login-form-input:focus {
+  border-color: #01876F;
+}
+
+.login-form-input::placeholder {
+  color: #aaaaaa;
+}
+
+/* Admin */
+
+.admin {
+  background-color: #01876F;
+  width: 100%;
+}
+
+/*client panel admin*/
+
+#clientpanel {
+  max-width: 1400px;
+  height: fit-content;
+  margin: 0 auto;
+  margin-bottom: 150px;
+  padding-top: 100px;
+  background-color: #01876F;
+}
+
+#Photopanel {
+  max-width: 1400px;
+  height: fit-content;
+  margin: 0 auto;
+  margin-bottom: 150px;
+  padding-top: 100px;
+  background-color: #01876F;
+
+}
+
+#Userpanel {
+  max-width: 1400px;
+  height: fit-content;
+  margin: 0 auto;
+  margin-bottom: 150px;
+  padding-top: 100px;
+  background-color: #01876F;
+}
+
+.clientpanel {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.client-table {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.client-content {
+  border-collapse: collapse;
+  margin: 25px 0;
+  min-width: 400px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border-radius: 5px 5px  0 0;
+  overflow: hidden;
+}
+
+.client-content img {
+  max-width: 50px;
+  max-height: 50px;
+  border: 2px solid #01876F;
+  border-radius: 4px;
+}
+
+.client-content thead tr {
+  background-color: #087460;
+  text-align: left;
+  color: #dddddd;
+  font-weight: bold;
+
+}
+
+.client-content th, .client-content td {
+  padding: 12px 15px;
+  font-size: 1.2rem;
+}
+
+.client-content tbody tr {
+  border-bottom: 1px solid #ddd;
+  background-color: #dddddd;
+}
+
+.client-content tbody tr:nth-of-type(even){
+  background-color: #f3f3f3;
+  color: #087460;
+}
+
+.client-content tbody tr:last-of-type {
+  border-bottom: 2px solid black;
+}
+
+@media only screen and (max-width:850px) {
   #portfolio .portfoliomain a {
     font-size: 2rem;
   }
 
   #portfolio .portfoliomain p {
     font-size: 2rem;
+  }
+
+  .login-panel {
+    width: 300px;
+    max-width: 300px;
+    min-width: 300px;
+  }
+
+  .login-form-input {
+    max-width: 210px;
+  }
+
+  .clientpanel {
+    flex-direction: column;
+  }
+
+  .login-panel {
+    margin-bottom: 50px;
+  }
+
+  .client-content {
+    min-width: 300px;
   }
 }
 
@@ -446,6 +629,7 @@ li {
   #portfolio .portfoliomain a {
     font-size: 3rem;
   }
+
   #portfolio .portfoliomain p {
     font-size: 3rem;
     width: 100%;
@@ -467,7 +651,7 @@ li {
   }
 
   .photo {
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
@@ -494,23 +678,23 @@ li {
     display: block;
     align-self: center;
   }
-  
+
   .hamburguer.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
-  
+
   }
-  
+
   .hamburguer.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
-  
+
   }
-  
+
   .hamburguer.active .bar:nth-child(2) {
     opacity: 0;
   }
-  
+
   .navbaritens {
-    position:fixed;
+    position: fixed;
     left: -100%;
     top: 6.3%;
     gap: 0;
@@ -520,15 +704,15 @@ li {
     background-color: #01876F;
     text-align: center;
   }
-  
+
   .navbaritens a {
     margin: 3px;
   }
-  
-  .navbaritens.active{
+
+  .navbaritens.active {
     left: 0;
   }
-  
+
   /* Hero */
   #hero .hero-apresentacao h1 {
     font-size: 2.5rem;
@@ -545,7 +729,7 @@ li {
     justify-content: center;
     align-items: center;
   }
-  
+
   .clientesItem {
     margin: 0;
     margin-bottom: 50px;
@@ -567,19 +751,9 @@ li {
   #clientes .clientes h2 {
     font-size: 2rem;
   }
-  
+
   #clientes .clientes p {
     font-size: 1.5rem;
   }
 
 }
-
-/*portfolio set*/
- .portfolioinfo a {
-  font-size: 3rem;
-  font-family: 'Raleway';
-  padding-bottom: 10px;
-  text-decoration: underline 0.1em #BD4429;
-  transition: 0.3s ease;
-
- }

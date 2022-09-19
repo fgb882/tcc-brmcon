@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-function Navbar() {
+function NavbarAdmin() {
 
 
     const hamburguer = document.querySelector(".hamburguer");
@@ -18,9 +18,9 @@ function Navbar() {
                     <Link to="/">BRM Consultoria</Link>
                 </div>
                 <div className="navbaritens">
-                        <a href="#clientes">Clientes</a>
-                        <a href="#footer">Contato</a>
-                        <Link to="/portfolio">Portfolio</Link>
+                        <a href="#clientpanel">Clientes</a>
+                        <a href="#Photopanel">Fotos</a>
+                        <a href="#Userpanel">Usuários</a>
                 </div>
                 <div className="hamburguer" onClick={hamburguerClick}>
                         <span className="bar"></span>
@@ -47,4 +47,4 @@ function hamburguerClick() {
 }
 
 
-export default Navbar 
+export default NavbarAdmin

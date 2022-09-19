@@ -1,12 +1,20 @@
 import React from 'react'
-import Image1 from '../assets/bg-cursedcar-1.jpg'
 
-const PortfolioP = () => {
+
+const PortfolioP = ({titulo, descricao, autor, local, foto}) => {
+
+
   return (
     <section id="photos">
-        <div className="photo">
+        <div className="photo"
+        style={{
+          backgroundImage: `url(${foto})`
+        }}>
             <div className="phototitle">
-            <h3>Title</h3>
+            <h3>{titulo}</h3>
+            <p>{descricao}</p>
+            <p>{autor}</p>
+            <p>{local}</p>
             </div>
         </div>
     </section>

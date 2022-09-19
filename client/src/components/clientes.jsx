@@ -4,11 +4,12 @@ import React, { useEffect, useState } from 'react'
 const Clientes = () => {
 
   const [clients, setClient] = useState()
+
+  
   useEffect(() =>{
-    Axios.get("http://localhost:3001/getClients").then((response) =>
+    Axios.get("http://localhost:3001/getclient").then((response) =>
     {
       setClient(response.data);
-      
     });
   });
 
@@ -24,7 +25,7 @@ const Clientes = () => {
       {typeof clients !== "undefined" &&
          clients.map((value) => {
           return(
-          <Clientesitem name={value.nome} logo={value.logo} />
+          <Clientesitem key={value.id} name={value.nome} logo={value.logo} />
           )
         })}
       </div>
