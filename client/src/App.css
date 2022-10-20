@@ -40,7 +40,7 @@ li {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10%;  
+  padding: 10px 10%;
 }
 
 #navbar .navbarlogo a {
@@ -51,6 +51,11 @@ li {
   text-underline-offset: 0.2em;
   transition: text-decoration-color 300ms, text-underline-offset 300ms;
   transition: ease 300ms;
+}
+
+#navbar .navbarlogo img {
+  width: 150px;
+  height: 150px;
 }
 
 #navbar .navbarlogo a:hover {
@@ -226,7 +231,7 @@ li {
   padding-top: 30px;
   padding-bottom: 30px;
   color: white;
-  border-top: #fff 4px solid;
+  border-top: #ddd 4px solid;
 }
 
 #footer .footerItens p {
@@ -237,7 +242,7 @@ li {
 }
 
 #footer h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 #footer .redesocial {
@@ -247,8 +252,10 @@ li {
 }
 
 #footer .social-item img {
-  height: 70px;
-  width: 70px;
+  height: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 50px;
 }
 
 .social-item img {
@@ -264,13 +271,13 @@ li {
 #footer a {
   padding-left: 5px;
   padding-right: 5px;
-  font-size: 1.2rem;
+  font-size: 2rem;
   text-decoration: none;
   color: white;
 }
 
 #footer a:hover {
-  color: #BD4429;
+  color: #ddd;
   transition: ease-in-out 0.3s;
 }
 
@@ -545,14 +552,16 @@ li {
 .client-table {
   display: flex;
   justify-content: center;
+  max-width: 280px;
   flex-wrap: wrap;
   margin-top: 50px;
+  margin: 0 auto;
 }
 
 .client-content {
   border-collapse: collapse;
   margin: 25px 0;
-  min-width: 400px;
+  min-width: 280px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   border-radius: 5px 5px  0 0;
   overflow: hidden;
@@ -574,8 +583,8 @@ li {
 }
 
 .client-content th, .client-content td {
-  padding: 12px 15px;
-  font-size: 1.2rem;
+  padding: 15px 8px;
+  font-size: 1rem;
 }
 
 .client-content tbody tr {
@@ -590,6 +599,79 @@ li {
 
 .client-content tbody tr:last-of-type {
   border-bottom: 2px solid black;
+}
+
+#form {
+  background-color: #087460;
+  margin-bottom: 0px;
+}
+
+#form .form {
+  border-top: #01876F 100px solid;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 180px;
+  padding-top: 120px;
+}
+
+#form .form h1 {
+  font-size: 3rem;
+  padding: 50px;
+  color: #eee;
+}
+
+#form h2 {
+  font-size: 3rem;
+  color: #fff;
+  padding-bottom: 60px;
+}
+
+#form .form-item {
+  width: 500px;
+  margin: 0 auto;
+}
+.form-item label, .form-item input, .form-item textarea, .form-item button {
+  display: block;
+  width: 100%;
+  justify-content: center;
+
+}
+
+.form-item label {
+  margin-bottom: 1.2rem;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.form-item input {
+  color: #ddd;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.form-item input, .form-item textarea {
+  font: inherit;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+
+.form-item textarea {
+  resize: vertical;
+}
+
+.form-item button {
+  padding: 10px;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #01876F;
+  width: 103.1%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 @media only screen and (max-width:850px) {
@@ -674,39 +756,9 @@ li {
 
   /*navbar*/
 
-  .hamburguer {
-    display: block;
-    align-self: center;
-  }
-
-  .hamburguer.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-
-  }
-
-  .hamburguer.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-
-  }
-
-  .hamburguer.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .navbaritens {
-    position: fixed;
-    left: -100%;
-    top: 6.3%;
-    gap: 0;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: #01876F;
-    text-align: center;
-  }
-
   .navbaritens a {
     margin: 3px;
+    margin-left: 25px;
   }
 
   .navbaritens.active {
@@ -737,6 +789,15 @@ li {
 
   /*footer */
 
+
+  .form-item {
+    max-width: 230px;
+  }
+
+  .form-item input {
+    max-width: 220px;
+  }
+  
 }
 
 @media only screen and (max-width:500px) {

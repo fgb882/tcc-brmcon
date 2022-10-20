@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Logo from '../assets/logo.jpg'
 function Navbar() {
 
 
@@ -15,7 +16,7 @@ function Navbar() {
         <nav id="navbar">
             <div className="navbar">
                 <div className="navbarlogo">
-                    <Link to="/">BRM Consultoria</Link>
+                <Link to="/"><img src={Logo} alt="logo"/></Link>
                 </div>
                 <div className="navbaritens">
                         <a href="#clientes">Clientes</a>

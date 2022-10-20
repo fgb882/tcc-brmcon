@@ -1,4 +1,8 @@
 import React from 'react'
+import linkedin from '../assets/linkedin.png'
+import facebook from '../assets/facebook-logo.png'
+import instagram from '../assets/instagram-logo.png'
+
 
 const Footer = () => {
   return (
@@ -11,16 +15,15 @@ const Footer = () => {
         </div>
         <div className="redesocial">
             <div className="social-item">
-                        <a href="https://facebook.com/"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" alt="facebook" /></a>
+                        <a href="https://facebook.com/"><img src={facebook} alt="facebook" /></a>
                     </div>
                     <div className="social-item">
-                        <a href="https://instagram.com"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" alt="instagram" /></a>
+                        <a href="https://instagram.com"><img src={instagram} alt="instagram" /></a>
                     </div>
                     <div className="social-item">
-                        <a href="https://linkedin.com.br"><img src="https://img.icons8.com/bubbles/100/000000/linkedin.png" alt="linkedin" /></a>
+                        <a href="https://linkedin.com.br"><img src={linkedin} alt="linkedin"/></a>
                     </div>
             </div>
-        <a href="https://icons8.com.br/"><h5>Todos os ícones por Icons8</h5></a>
       </div>
     </footer>
   )

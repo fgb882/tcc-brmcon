@@ -4,6 +4,7 @@ import PortfolioP from '../components/portfolio_photos'
 
 import { useState, useEffect } from 'react'
 import Axios from 'axios'
+import NavbarAdmin from '../components/navbar-admin'
 
 const Portfolio = () => {
   const [photoinfo, setPhotoinfo] = useState();
@@ -16,6 +17,7 @@ const Portfolio = () => {
 
   return (
     <div>
+      <NavbarAdmin />
       <div className="barra">
       </div>
       <div className="portfolio">

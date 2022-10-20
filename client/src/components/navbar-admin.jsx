@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Logo from '../assets/logo.jpg'
 function NavbarAdmin() {
 
 
@@ -15,12 +16,11 @@ function NavbarAdmin() {
         <nav id="navbar">
             <div className="navbar">
                 <div className="navbarlogo">
-                    <Link to="/">BRM Consultoria</Link>
+                    <img src={Logo} alt="Logo"></img>
                 </div>
                 <div className="navbaritens">
-                        <a href="#clientpanel">Clientes</a>
-                        <a href="#Photopanel">Fotos</a>
-                        <a href="#Userpanel">Usuários</a>
+                        <Link to="/">Home</Link>
+                        <Link to="/portfolio">Portfolio</Link>
                 </div>
                 <div className="hamburguer" onClick={hamburguerClick}>
                         <span className="bar"></span>

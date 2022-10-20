@@ -1,6 +1,7 @@
 import Borda from '../components/borda'
 import Clientes from '../components/clientes'
 import Footer from '../components/footer'
+import Forms from '../components/forms'
 import Hero from '../components/hero'
 import Navbar from '../components/navbar'
 
@@ -11,6 +12,7 @@ function Home() {
             <Hero />
             <Borda />
             <Clientes />
+            <Forms />
             <Footer />
         </div>
     )
