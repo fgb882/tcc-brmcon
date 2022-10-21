@@ -1,11 +1,11 @@
 import React from 'react'
 import Loginpanel from '../components/loginpanel'
-import Navbar from '../components/navbar'
+import NavbarAdmin from '../components/navbar-admin'
 
 const Login = () => {
   return (
     <div>
-    <Navbar />
+    <NavbarAdmin />
     <Loginpanel />
     </div>
   )

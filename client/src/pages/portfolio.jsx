@@ -5,6 +5,7 @@ import PortfolioP from '../components/portfolio_photos'
 import { useState, useEffect } from 'react'
 import Axios from 'axios'
 import NavbarAdmin from '../components/navbar-admin'
+import Footer from '../components/footer'
 
 const Portfolio = () => {
   const [photoinfo, setPhotoinfo] = useState();
@@ -31,6 +32,7 @@ const Portfolio = () => {
           })}
       </div>
       <div className="barra"> </div>
+      <Footer />
     </div>
   )
 }

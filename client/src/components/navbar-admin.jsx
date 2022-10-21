@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Logo from '../assets/logo.jpg'
+import Logo from '../assets/logo.png'
 function NavbarAdmin() {
 
 
