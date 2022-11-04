@@ -32,11 +32,9 @@ const ClientPanel = () => {
         }));
     };
 
+
+
     console.log(newClient);
-
-
-
-
 
     return (
         <section id="clientpanel">
@@ -64,6 +62,7 @@ const ClientPanel = () => {
                             <th>ID</th>
                             <th>Nome</th>
                             <th>Logo</th>
+                            <th>Editar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -74,6 +73,7 @@ const ClientPanel = () => {
                                     <td>{item.id}</td>
                                     <td>{ item.nome }</td>
                                     <td><img src={item.logo} alt="Logo" /></td>
+                                    <td><button onClick={handleListButton}>Editar</button></td>
                                   </tr>
                                 );
                               })}
@@ -82,6 +82,14 @@ const ClientPanel = () => {
             </div>
         </section>
     )
+}
+
+
+
+function handleListButton(){
+    let modalBg = document.querySelector('.modal-bg')
+    modalBg.classList.toggle('bg-active');
+    console.log("Click")
 }
 
 export default ClientPanel

@@ -1,6 +1,7 @@
 import React from 'react'
 import ClientPanel from '../components/clientpanel'
 import Footer from '../components/footer'
+import Modal from '../components/modal'
 import NavbarAdmin from '../components/navbar-admin'
 import Photopanel from '../components/photopanel'
 
@@ -10,6 +11,7 @@ const Admin = () => {
       <NavbarAdmin />
       <ClientPanel />
       <Photopanel />
+      <Modal />
       <Footer />
     </div>
   )

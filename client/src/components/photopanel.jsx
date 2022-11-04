@@ -17,7 +17,6 @@ const Photopanel = () => {
     const handleClickButton = () => {
         Axios.post("http://localhost:3001/setphoto", {
             autor: newPhotoInfo.autor,
-            descricao: newPhotoInfo.descricao,
             titulo: newPhotoInfo.titulo,
             local: newPhotoInfo.local,
             foto: newPhotoInfo.foto,
@@ -49,7 +48,6 @@ const Photopanel = () => {
                         </div>
                         <div className="login-form-content">
                             <input type="text" className="login-form-input" name="autor" placeholder="Autor" onChange={handleChangeValues}/>
-                            <input type="text" className="login-form-input" name="descricao" placeholder="Descrição" onChange={handleChangeValues}/>
                             <input type="text" className="login-form-input" name="titulo" placeholder="Título" onChange={handleChangeValues}/>
                             <input type="text" className="login-form-input" name="local" placeholder="Local" onChange={handleChangeValues}/>
                             <input type="text" className="login-form-input" name="foto" placeholder="URL da Foto" onChange={handleChangeValues}/>
@@ -60,16 +58,15 @@ const Photopanel = () => {
                 </div> 
             </div>
             <div className="client-table">
-            <table className="client-content">
+            <table className="client-content edit">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Autor</th>
-                            <th>Descrição</th>
                             <th>Título</th>
                             <th>Local</th>
                             <th>Foto</th>
-                            <th>Portfolio</th>
+                            <th>Editar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -80,11 +77,10 @@ const Photopanel = () => {
                                   <tr key={item.id}>
                                     <td>{item.id}</td>
                                     <td>{ item.autor }</td>
-                                    <td>{item.descricao}</td>
                                     <td>{item.titulo}</td>
                                     <td>{item.local}</td>
                                     <td><img src={item.foto} alt="foto" /></td>
-                                    <td>{item.portfolio}</td>
+                                    <td><button>+</button></td>
                                   </tr>
                                 );
                               })}

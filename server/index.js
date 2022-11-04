@@ -6,7 +6,7 @@ const cors = require("cors");
 
 const db = mysql.createPool({
     host: "localhost",
-    user: "admin",
+    user: "root",
     password: "1234",
     database: "brm",
 });
@@ -43,7 +43,6 @@ app.get("/getclient", (req, res) => {
 
 app.post("/setphoto", (req, res) => {
    const { autor } = req.body;
-   const { descricao } = req.body;
    const { titulo } = req.body;
    const { local } = req.body;
    const { foto } = req.body;
@@ -55,9 +54,9 @@ app.post("/setphoto", (req, res) => {
    let year = date_ob.getFullYear();
    const data = (year + "-" + month + "-" + date);
 
-   let SQL = "INSERT INTO brm.fotos ( autor, descricao, titulo, local, foto, data, portfolio_id ) VALUES ( ?,?,?,?,?,?,?)"
+   let SQL = "INSERT INTO brm.fotos ( autor, titulo, local, foto, data, portfolio_id ) VALUES ( ?,?,?,?,?,?,?)"
 
-   db.query(SQL, [autor, descricao, titulo, local, foto, data, portfolio], (err, res) => {
+   db.query(SQL, [autor, titulo, local, foto, data, portfolio], (err, res) => {
     console.log(err)
    })
 

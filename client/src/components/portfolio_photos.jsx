@@ -12,7 +12,6 @@ const PortfolioP = ({titulo, descricao, autor, local, foto}) => {
         }}>
             <div className="phototitle">
             <h3>{titulo}</h3>
-            <p>{descricao}</p>
             <p>{autor}</p>
             <p>{local}</p>
             </div>
