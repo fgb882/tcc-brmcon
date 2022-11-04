@@ -1,10 +1,9 @@
 import React from 'react'
 import PortfolioC from '../components/portfolio_content'
 import PortfolioP from '../components/portfolio_photos'
-
+import NavbarPortfolio from '../components/navbar-portfolio'
 import { useState, useEffect } from 'react'
 import Axios from 'axios'
-import NavbarAdmin from '../components/navbar-admin'
 import Footer from '../components/footer'
 
 const Portfolio = () => {
@@ -18,7 +17,7 @@ const Portfolio = () => {
 
   return (
     <div>
-      <NavbarAdmin />
+      <NavbarPortfolio />
       <div className="barra">
       </div>
       <div className="portfolio">
@@ -31,7 +30,7 @@ const Portfolio = () => {
             );
           })}
       </div>
-      <div className="barra"> </div>
+      <div className="barra"></div>
       <Footer />
     </div>
   )

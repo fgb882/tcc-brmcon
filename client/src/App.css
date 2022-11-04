@@ -487,6 +487,7 @@ li {
 
 .login-form-button {
   padding: 10px;
+  margin-bottom: 10px;
   color: #ffffff;
   font-weight: bold;
   background-color: #01876F;
@@ -528,6 +529,21 @@ li {
   transition: visibility 0s, opacity 0,5s;
 }
 
+.modal-bg2 {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0,5s;
+}
+
 .bg-active {
   visibility: visible;
   opacity: 1;
@@ -544,7 +560,19 @@ li {
   flex-direction: column;
 }
 
-.modal label {
+.modal2 {
+  position: relative;
+  background: white;
+  width: 50%;
+  height: 65%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal label{
   font-size: 1.5rem;
 }
 
@@ -553,7 +581,20 @@ li {
   margin-bottom: -4px;
 }
 
-.modal input {
+.modal input{
+  width: 50%;
+}
+
+.modal2 label{
+  font-size: 2.5rem;
+}
+
+.modal2 h1 {
+  font-size: 3rem;
+  margin-bottom: -4px;
+}
+
+.modal2 input{
   width: 50%;
 }
 
@@ -564,7 +605,7 @@ li {
   font-weight: bold;
   cursor: pointer;
 }
-.modal button {
+.modal button, .modal2 button  {
   padding: 10px;
   color: #ffffff;
   font-weight: bold;

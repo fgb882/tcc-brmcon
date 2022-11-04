@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Logo from '../assets/logo.png'
-function Navbar() {
+function NavbarPortfolio() {
 
 
     const hamburguer = document.querySelector(".hamburguer");
@@ -16,12 +16,10 @@ function Navbar() {
         <nav id="navbar">
             <div className="navbar">
                 <div className="navbarlogo">
-                <Link to="/login"><img src={Logo} alt="logo"/></Link>
+                    <img src={Logo} alt="Logo"></img>
                 </div>
                 <div className="navbaritens">
-                        <a href="#clientes">Clientes</a>
-                        <a href="#footer">Contato</a>
-                        <Link to="/portfolio">Portfolio</Link>
+                        <Link to="/">Home</Link>
                 </div>
                 <div className="hamburguer" onClick={hamburguerClick}>
                         <span className="bar"></span>
@@ -48,4 +46,4 @@ function hamburguerClick() {
 }
 
 
-export default Navbar 
+export default NavbarPortfolio

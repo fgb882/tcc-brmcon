@@ -8,7 +8,7 @@ const Modal = () => {
             <h1>Edite aqui</h1>
             <label htmlFor="Nome">Nome:</label>
             <input type="text" name='name' />
-            <label htmlFor="logo">Logo:</label>
+            <label htmlFor="logo">URL da Logo:</label>
             <input type="text" name='logo' />
             <button>Editar</button>
             <span className="modal-close" onClick={modalClose}>X</span>

@@ -80,7 +80,7 @@ const Photopanel = () => {
                                     <td>{item.titulo}</td>
                                     <td>{item.local}</td>
                                     <td><img src={item.foto} alt="foto" /></td>
-                                    <td><button>+</button></td>
+                                    <td><button onClick={handleListButton}>+</button></td>
                                   </tr>
                                 );
                               })}
@@ -89,6 +89,14 @@ const Photopanel = () => {
                 </div>
         </section>
     )
+}
+
+
+
+function handleListButton(){
+    let modalBg = document.querySelector('.modal-bg2')
+    modalBg.classList.toggle('bg-active');
+    console.log("Click")
 }
 
 export default Photopanel
