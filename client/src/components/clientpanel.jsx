@@ -1,6 +1,7 @@
 import React from 'react'
 import Axios from 'axios'
 import { useState, useEffect } from 'react'
+import ClientList from './clientlist'
 
 const ClientPanel = () => {
 
@@ -69,12 +70,7 @@ const ClientPanel = () => {
                         {typeof clients !== "undefined" &&
                             clients.map(item => {
                                 return (
-                                  <tr key={item.id}>
-                                    <td>{item.id}</td>
-                                    <td>{ item.nome }</td>
-                                    <td><img src={item.logo} alt="Logo" /></td>
-                                    <td><button onClick={handleListButton}>Editar</button></td>
-                                  </tr>
+                                  <ClientList id={item.id} nome={item.nome} logo={item.logo} />
                                 );
                               })}
                     </tbody>
@@ -86,10 +82,5 @@ const ClientPanel = () => {
 
 
 
-function handleListButton(){
-    let modalBg = document.querySelector('.modal-bg')
-    modalBg.classList.toggle('bg-active');
-    console.log("Click")
-}
 
 export default ClientPanel

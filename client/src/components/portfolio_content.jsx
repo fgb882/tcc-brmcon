@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import linkedin from '../assets/linkedin.png'
+import facebook from '../assets/facebook-logo.png'
+import instagram from '../assets/instagram-logo.png'
 
 const PortfolioC = () => {
   return (
@@ -14,13 +17,13 @@ const PortfolioC = () => {
             <h4>Redes Sociais</h4>
             <div className="column">
             <div className="social-item">
-                        <a href="https://wa.me/"><img src="https://img.icons8.com/bubbles/100/000000/whatsapp.png" alt="whatsapp" /></a>
+                        <a href="https://wa.me/"><img src={facebook} alt="facebook" /></a>
                     </div>
                     <div className="social-item">
-                        <a href="https://instagram.com"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" alt="instagram" /></a>
+                        <a href="https://instagram.com"><img src={instagram} alt="instagram" /></a>
                     </div>
                     <div className="social-item">
-                        <a href="https://linkedin.com.br"><img src="https://img.icons8.com/bubbles/100/000000/linkedin.png" alt="linkedin" /></a>
+                        <a href="https://linkedin.com.br"><img src={linkedin} alt="linkedin" /></a>
                     </div>
                     </div>
             </div>

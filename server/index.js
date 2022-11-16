@@ -8,7 +8,7 @@ const db = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "1234",
-    database: "brm",
+    database: "brm"
 });
 
 app.use(cors());
@@ -38,6 +38,19 @@ app.get("/getclient", (req, res) => {
         }
     })
 });
+
+app.put("/editclient", (req, res) => {
+    const { id } = req.body;
+    const nome = req.body.name;
+    const { logo } = req.body;
+
+    let SQL = "UPDATE clientes SET nome = ?, logo = ? WHERE id = ?"
+
+    db.query(SQL, [nome, logo, id], (err, result) =>{
+        if(err) console.log(err);
+        else res.send(result);
+    })
+})
 
 // Photos
 
