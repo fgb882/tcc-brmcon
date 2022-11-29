@@ -1,23 +1,42 @@
 import React from 'react'
 
-const ModalPhoto = () => {
+const ModalPhoto = (item) => {
+  const [editValues, setEditValues] = useState({
+    id: item.id,
+    name: item.name,
+    logo: item.logo,
+  });
 
+  const handleChangeValues = (value) => {
+    setEditValues((prevValues)=>({
+      ...prevValues,
+      [value.target.id]: value.target.value,
+    }));
+  }
+
+  const handleEditCard = () => {
+    Axios.put('http://localhost:3001/editphoto',{
+      id: editValues.id,
+      name: editValues.name,
+      logo: editValues.logo,
+    });
+    modalClose();
+    document.location.reload()  
+  }
+
+ 
   return (
-    <section id="modal2" className='modal-bg2'>
-        <div className="modal2">
-            <h1>Edite aqui</h1>
-            <label htmlFor="Nome">Nome:</label>
-            <input type="text" name='name' />
-            <label htmlFor="Titulo">Título:</label>
-            <input type="text" name='Titulo' />
-            <label htmlFor="Local">Local:</label>
-            <input type="text" name='Local' />
-            <label htmlFor="Portfolio">ID do Portfolio:</label>
-            <input type="text" name='Portfolio' />
-          
-            <label htmlFor="logo">URL da Foto:</label>
-            <input type="text" name='logo' />
-            <button>Editar</button>
+    <section id="modal" className='modal-bg'>
+        <div className="modal">
+            <h1>Coloque aqui as informações do cliente</h1>
+            <label htmlFor="id">ID:</label>
+            <input type="text" name='id' id="id" placeholder="ID do Cliente" onChange={handleChangeValues}/>
+            <label htmlFor="Autor">Autor:</label>
+            <input type="text" name='name' id="name" placeholder="Nome do Autor" onChange={handleChangeValues}/>
+            <label htmlFor="title">URL da Logo:</label>
+            <input type="text" name='title' id="title" placeholder="Título da Foto" onChange={handleChangeValues}/>
+            <button onClick={handleEditCard}>Editar</button>
+            <button>Deletar</button>
             <span className="modal-close" onClick={modalClose}>X</span>
         </div>
     </section>
@@ -26,8 +45,8 @@ const ModalPhoto = () => {
 
 
 function modalClose() {
-  let modalBg = document.querySelector('.modal-bg2')
+  let modalBg = document.querySelector('.modal-bg')
   modalBg.classList.remove('bg-active')
 }
 
-export default ModalPhoto
+export default Modal

@@ -24,6 +24,7 @@ const Photopanel = () => {
 
         }).then((response) =>{
             console.log(response);
+            document.location.reload()
         })
     }
 
@@ -31,7 +32,8 @@ const Photopanel = () => {
         Axios.get("http://localhost:3001/getphoto").then((response) => {
             setPhotoinfo(response.data);
         });
-    });
+    }
+    );
 
 
 
@@ -52,7 +54,7 @@ const Photopanel = () => {
                             <input type="text" className="login-form-input" name="local" placeholder="Local" onChange={handleChangeValues}/>
                             <input type="text" className="login-form-input" name="foto" placeholder="URL da Foto" onChange={handleChangeValues}/>
                             <input type="text" className="login-form-input" name="portfolio" placeholder="Portfólio (Coloque 1 para Público, 2 para Privado)" onChange={handleChangeValues}/>
-                            <button type="submit" className="login-form-button" onClick={() => handleClickButton()}>Login</button>
+                            <button type="submit" className="login-form-button" onClick={() => handleClickButton()}>Registrar</button>
                         </div>
                     </div>
                 </div> 

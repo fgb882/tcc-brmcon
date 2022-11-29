@@ -23,7 +23,16 @@ const Modal = (item) => {
       logo: editValues.logo,
     });
     modalClose();
+    document.location.reload();
   }
+
+  const handleDeleteCard = () => {
+    Axios.delete(`http://localhost:3001/delete/${editValues.id}`);
+    modalClose()
+    document.location.reload()
+  }
+  
+  
   return (
     <section id="modal" className='modal-bg'>
         <div className="modal">
@@ -35,7 +44,7 @@ const Modal = (item) => {
             <label htmlFor="logo">URL da Logo:</label>
             <input type="text" name='logo' id="logo" placeholder="URL da Logo Desejada"  onChange={handleChangeValues}/>
             <button onClick={handleEditCard}>Editar</button>
-            <button>Deletar</button>
+            <button className='delete' onClick={handleDeleteCard}>Deletar</button>
             <span className="modal-close" onClick={modalClose}>X</span>
         </div>
     </section>

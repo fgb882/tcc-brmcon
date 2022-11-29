@@ -59,8 +59,8 @@ li {
 }
 
 #navbar .navbarlogo a:hover {
-  color: #ddd;
-  text-decoration-color: #ddd;
+  color: #eef;
+  text-decoration-color: #eef;
 }
 
 
@@ -86,8 +86,8 @@ li {
 }
 
 #navbar .navbaritens a:hover {
-  color: #aaa;
-  text-decoration-color: #aaa;
+  color: #eef;
+  text-decoration-color: #eef;
 }
 
 #navbar a {
@@ -126,12 +126,26 @@ li {
   max-width: 100%;
   height: 30vh;
   max-height: 30vh;
-  background-color: bisque;
+  background-image: url('./assets/brm-fundotemp.jpg');
   display: flex;
+  position: relative;
   flex-direction: row;
   justify-content: space-between;
   padding: 10%;
   margin-bottom: 0;
+  background-size: cover;
+  z-index: -1;
+}
+
+#hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: .7;
   z-index: -1;
 }
 
@@ -141,12 +155,13 @@ li {
 
 #hero .hero-apresentacao h1 {
   font-size: 3rem;
-  color: #BD4429;
+  color: #fff;
 }
 
 #hero .hero-apresentacao p {
   text-align: justify;
   font-size: 2rem;
+  color: #eee;
 }
 
 /* Borda */
@@ -190,6 +205,8 @@ li {
   margin: 50px;
   box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0);
   transition: 0.3s;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .clientesItem:hover {
@@ -200,6 +217,7 @@ li {
   width: 100%;
   background-color: #01876F;
   height: 10px;
+
 }
 
 .clientesItem h3 {
@@ -235,14 +253,14 @@ li {
 }
 
 #footer .footerItens p {
-  font-size: 1.5rem;
+  font-size: 2rem;
   display: block;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 #footer h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 #footer .redesocial {
@@ -277,7 +295,7 @@ li {
 }
 
 #footer a:hover {
-  color: #ddd;
+  color: #eee;
   transition: ease-in-out 0.3s;
 }
 
@@ -375,7 +393,7 @@ li {
 }
 
 .phototitle h3 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding-left: 10px;
   max-height: 15%;
   color: black;
@@ -384,13 +402,6 @@ li {
 
 .phototitle h3:hover {
   color: #eee;
-}
-
-.phototitle p {
-  font-size: 1.2rem;
-  color: black;
-  padding-left: 10px;
-  transition: 0.3s ease;
 }
 
 .phototitle p:hover {
@@ -554,6 +565,7 @@ li {
   background: white;
   width: 30%;
   height: 30%;
+  padding: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -577,12 +589,13 @@ li {
 }
 
 .modal h1 {
-  font-size: 3rem;
-  margin-bottom: -4px;
+  font-size: 2rem;
+  margin-bottom: 2px;
 }
 
 .modal input{
   width: 50%;
+  margin-bottom: 2px;
 }
 
 .modal2 label{
@@ -616,6 +629,8 @@ li {
   border-radius: 5px;
   font-size: 2rem;
   cursor: pointer;
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 .edit button {
@@ -959,7 +974,24 @@ li {
 
   .client-table td, .client-table th {
     font-size: 1.5rem;
-    padding: 15px
+    padding: 15px;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  .client-table td, .client-table th {
+    max-width: 100px;
+    overflow: hidden;
   }
   
+  .modal, .modal2 {
+    padding: 20px;
+  }
+
+  #modal .modal {
+    width: 70%;
+    min-height: fit-content;
+  }
 }

@@ -23,6 +23,7 @@ const ClientPanel = () => {
             logo: newClient.logo,
         }).then((response) =>{
             console.log(response);
+            document.location.reload()
         })
     }
 
@@ -51,7 +52,7 @@ const ClientPanel = () => {
                         <div className="login-form-content">
                             <input type="text" className="login-form-input" name="name" placeholder="Nome" onChange={handleChangeValues}/>
                             <input type="text" className="login-form-input" name="logo" placeholder="URL da Logo" onChange={handleChangeValues}/>
-                            <button type="submit" className="login-form-button" onClick={() => handleClickButton()}>Login</button>
+                            <button type="submit" className="login-form-button" onClick={() => handleClickButton()}>Registrar</button>
                         </div>
                     </div>
                 </div>
