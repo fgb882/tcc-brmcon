@@ -26,7 +26,7 @@ const Portfolio = () => {
           photoinfo.map(item => {
 
             return (
-              <PortfolioP key={item.id} foto={item.foto} titulo={item.titulo} descricao={item.descricao} data={item.data} local={item.local} autor={item.autor} />
+              <PortfolioP key={item.id} foto={item.foto} titulo={item.titulo} data={item.data} local={item.local} autor={item.autor} />
             );
           })}
       </div>

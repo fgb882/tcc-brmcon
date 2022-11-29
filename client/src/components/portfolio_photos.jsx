@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const PortfolioP = ({titulo, descricao, autor, local, foto}) => {
+const PortfolioP = ({titulo, autor, local, foto}) => {
 
 
   return (

@@ -11,6 +11,7 @@ const db = mysql.createPool({
     database: "brm"
 });
 
+
 app.use(cors());
 app.use(express.json());
 
@@ -68,7 +69,7 @@ app.post("/setphoto", (req, res) => {
    const { titulo } = req.body;
    const { local } = req.body;
    const { foto } = req.body;
-   const { portfolio } = req.body;
+   const { portfolio_id } = '1';
 
    let date_ob = new Date();
    let date = ("0" + date_ob.getDate()).slice(-2);
@@ -78,7 +79,7 @@ app.post("/setphoto", (req, res) => {
 
    let SQL = "INSERT INTO brm.fotos ( autor, titulo, local, foto, data, portfolio_id ) VALUES ( ?,?,?,?,?,? )"
 
-   db.query(SQL, [autor, titulo, local, foto, data, portfolio], (err, res) => {
+   db.query(SQL, [autor, titulo, local, foto, data, 1], (err, res) => {
     console.log(err)
    })
 
@@ -95,6 +96,32 @@ app.get("/getphoto", (req, res) => {
         }
     })
 });
+
+app.put("/editphoto", (req, res) => {
+    const { id } = req.body;
+    const { autor } = req.body;
+    const { titulo } = req.body;
+    const { local } = req.body;
+    const { foto } = req.body;
+    const { portfolio_id } = '1';
+ 
+    let SQL = "UPDATE fotos SET autor = ?, titulo = ?, local = ?, foto = ?, portfolio_id = ? WHERE id = ?"
+
+    db.query(SQL, [autor, titulo, local, foto, 1, id], (err, result) =>{
+        if(err) console.log(err);
+        else res.send(result);
+    })
+})
+
+app.delete("/deletePhoto/:id", (req,res) => {
+    const {id} = req.params;
+    let SQL = "DELETE FROM fotos WHERE id = ?";
+    db.query(SQL,[id],(err, result) => {
+        if(err) console.log(err);
+        else res.send(result);
+    })
+})
+
 
 
 app.listen(3001, () =>{

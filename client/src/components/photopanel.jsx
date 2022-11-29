@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Axios from 'axios'
+import PhotoList from './photolist'
 
 const Photopanel = () => {
     
@@ -20,7 +21,7 @@ const Photopanel = () => {
             titulo: newPhotoInfo.titulo,
             local: newPhotoInfo.local,
             foto: newPhotoInfo.foto,
-            portfolio: newPhotoInfo.portfolio,
+            portfolio_id: newPhotoInfo.portfolio,
 
         }).then((response) =>{
             console.log(response);
@@ -53,7 +54,7 @@ const Photopanel = () => {
                             <input type="text" className="login-form-input" name="titulo" placeholder="Título" onChange={handleChangeValues}/>
                             <input type="text" className="login-form-input" name="local" placeholder="Local" onChange={handleChangeValues}/>
                             <input type="text" className="login-form-input" name="foto" placeholder="URL da Foto" onChange={handleChangeValues}/>
-                            <input type="text" className="login-form-input" name="portfolio" placeholder="Portfólio (Coloque 1 para Público, 2 para Privado)" onChange={handleChangeValues}/>
+                            <input type="text" className="login-form-input" name="portfolio" placeholder="Portfólio (Coloque 1 para Público, 2 para Privado)" onChange={handleChangeValues} hidden value={'1'}/>
                             <button type="submit" className="login-form-button" onClick={() => handleClickButton()}>Registrar</button>
                         </div>
                     </div>
@@ -76,14 +77,7 @@ const Photopanel = () => {
                             photoinfo.map(item => {
 
                                 return (
-                                  <tr key={item.id}>
-                                    <td>{item.id}</td>
-                                    <td>{ item.autor }</td>
-                                    <td>{item.titulo}</td>
-                                    <td>{item.local}</td>
-                                    <td><img src={item.foto} alt="foto" /></td>
-                                    <td><button onClick={handleListButton}>+</button></td>
-                                  </tr>
+                                  <PhotoList autor={item.autor} id={item.id} titulo={item.titulo} local={item.local} foto={item.foto} portfolio={item.portfolio} />
                                 );
                               })}
                     </tbody>
@@ -91,14 +85,6 @@ const Photopanel = () => {
                 </div>
         </section>
     )
-}
-
-
-
-function handleListButton(){
-    let modalBg = document.querySelector('.modal-bg2')
-    modalBg.classList.toggle('bg-active');
-    console.log("Click")
 }
 
 export default Photopanel
