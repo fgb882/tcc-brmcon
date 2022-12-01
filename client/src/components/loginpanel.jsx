@@ -1,18 +1,65 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-//import { useState } from 'react'
-//import Axios from 'axios'
+import { useState, useEffect } from 'react'
+import Axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
-const Loginpanel = props => {
+const Loginpanel = () => {
 
-  //  const [values, SetValues] = useState();
-   // console.log(values)
-   // const handleChangeValues = (value) => {
-   //     SetValues(prevValue => ({
-   //         ...prevValue,
-   //         [value.target.name]: value.target.value,
-  //      }));
-  //  }
+    const navigate = useNavigate()
+
+    const [usernameReg, setUsernameReg] = useState('');
+    const [passwordReg, setPasswordReg] = useState('');
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    Axios.defaults.withCredentials = true;
+
+    const login = async () => {
+        const response = await Axios.post("http://localhost:3001/login", {
+            username: username,
+            password: password,
+        })
+        if (response.data.message) {
+            setLoginStatus(response.data.message);
+        } else {
+            setLoginStatus(response.data[0].username);
+            console.log('teste')
+        }
+    };
+
+    const register = () => {
+        Axios.post("http://localhost:3001/register", {
+            username: usernameReg,
+            password: passwordReg,
+            role: "user",
+        }).then((response) => {
+            console.log(response);
+        })
+    }
+
+    const handleLogin = async () => {
+        await login();
+        await redirect();
+    }
+
+
+    const [loginStatus, setLoginStatus] = useState('');
+
+
+    const redirect = async () => {
+        try{
+        const response = await Axios.get("http://localhost:3001/login")
+        if (response.data.loggedIn == true) {
+            setLoginStatus(response.data.user[0].username);
+            console.log(response.data.loggedIn);
+            navigate("/admin")
+        }
+        }catch(e){
+            console.log(e);
+        }
+    }
+
 
 
     return (
@@ -26,11 +73,19 @@ const Loginpanel = props => {
                         <h3>Bem-vindo!</h3>
                     </div>
                     <div className="login-form-content">
-                        <input type="text" className="login-form-input" name="lg_username" placeholder="Usuário" />
-                        <input type="password" className="login-form-input" name="lg_senha" placeholder="Senha" />
-                        <Link to="/admin"><button type="submit" className="login-form-button">Login</button></Link>
+                        <input type="text" className="login-form-input" name="lg_username" placeholder="Usuário" onChange={(e) => {
+                            setUsername(e.target.value);
+                        }} />
+                        <input type="password" className="login-form-input" name="lg_senha" placeholder="Senha" onChange={(e) => {
+                            setPassword(e.target.value);
+                        }} />
+                        <button type="submit" className="login-form-button" onClick={() => {
+                            handleLogin();
+                        }}>Login</button>
                     </div>
                 </div>
+
+                <h3>{loginStatus}</h3>
             </div>
         </div>
     )
